@@ -1,8 +1,16 @@
 const express = require('express');
 const tourController = require('../controllers/tourController');
 const authController = require('../controllers/authController');
+const reviewRouter = require('./reviewRoutes');
+// const reviewController = require('../controllers/reviewController');
 
 const router = express.Router();
+
+// POST /tour/234fad4/reviews => nested route (review is child of tour)
+// GET /tour/234fad4/reviews
+
+// redirect to review Router if path starts with below
+router.use('/:tourId/reviews', reviewRouter);
 
 router
   .route('/top-5-tours')

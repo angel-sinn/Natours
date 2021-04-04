@@ -1,5 +1,3 @@
-// review / rating / createdAt / ref to tour / ref to user
-
 const mongoose = require('mongoose');
 
 const reviewSchema = new mongoose.Schema(
@@ -51,3 +49,7 @@ reviewSchema.pre(/^find/, function (next) {
 const Review = mongoose.model('Review', reviewSchema);
 
 module.exports = Review;
+
+// POST /tour/234fad4/reviews => nested route (review is child of tour)
+// GET /tour/234fad4/reviews
+// GET /tour/234fad4/reviews/982347
