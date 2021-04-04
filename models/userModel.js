@@ -55,6 +55,14 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
+userSchema.pre('save', function (next) {
+  // if didn't modify password or if document is new, then run next middleware
+  if (!this.isModified('password') || this.isNew) return next();
+
+  this.passwordChangedAt = Date.now() - 1000;
+  next();
+});
+
 // instance method - available on all documents of a certain collection
 userSchema.methods.correctPassword = async function (
   candidatePassword,
