@@ -18,6 +18,7 @@ const bookBtn = document.getElementById('book-tour');
 if (mapBox) {
   // Get location info from HTML (tour.pug) under section-map
   const locations = JSON.parse(mapBox.dataset.locations);
+  displayMap(locations);
 }
 
 if (loginForm)

@@ -9048,6 +9048,7 @@ var bookBtn = document.getElementById('book-tour'); // DELEGATION
 if (mapBox) {
   // Get location info from HTML (tour.pug) under section-map
   var locations = JSON.parse(mapBox.dataset.locations);
+  (0, _mapbox.displayMap)(locations);
 }
 
 if (loginForm) loginForm.addEventListener('submit', function (e) {
@@ -9136,7 +9137,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55531" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49976" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

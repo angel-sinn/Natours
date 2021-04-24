@@ -4,7 +4,7 @@ export const displayMap = (locations) => {
   mapboxgl.accessToken =
     'pk.eyJ1IjoiYW5nZWxreSIsImEiOiJja242eHlmNDcwaXZ3MnRwNm9ldzhlNTFnIn0.W1GxyUQyIjTWPxCzpathfQ';
 
-  var map = new mapboxgl.Map({
+  const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/angelky/ckn6yah5r0s3617nyxf1u85ai',
     scrollZoom: false,
