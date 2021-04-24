@@ -7,7 +7,7 @@ This project was a part of the <a href="https://www.udemy.com/course/nodejs-expr
 ## Project Stack
 
 **Front-End**: JavaScript  
-**Back-End**: Pug, Express, Node, MongoDB
+**Back-End**: Pug, Express, Node, MongoDB  
 **API**: Mapbox API, Stripe API
 
 ## Project Features
