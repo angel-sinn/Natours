@@ -51,7 +51,7 @@ exports.signup = catchAsync(async (req, res, next) => {
   });
 
   const url = `${req.protocol}://${req.get('host')}/me`;
-  console.log(url);
+  // console.log(url);
   await new Email(newUser, url).sendWelcome();
 
   createSendToken(newUser, 201, res);
@@ -131,13 +131,11 @@ exports.protect = catchAsync(async (req, res, next) => {
     token = req.cookies.jwt;
   }
 
-  // console.log(token);
   if (!token) {
     return next(new AppError('Please log in to get access', 401));
   }
   // 2) Verification
   const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
-  // console.log(decoded);
 
   // 3) Check if user still exists (if user is deleted)
   const currentUser = await User.findById(decoded.id);
